@@ -31,7 +31,7 @@ struct QuizzItem: Codable, Identifiable {
 }
 
 
-class Quizz10Model {
+class Quizz10Model : ObservableObject{
     
     @Published var quizzes = [QuizzItem]()
     
