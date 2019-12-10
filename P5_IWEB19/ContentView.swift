@@ -9,6 +9,17 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    @EnvironmentObject var quizzModel: Quizz10Model
+
+    let quizzModel = Quizz10Model()
+    quizzModel.download()
+
+    let imageStore = imageStore()
+
+    let contentView = ContentView()
+      .environmentObject(quizzModel)
+
     var body: some View {
         Text("Hello, World!")
     }
