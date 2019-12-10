@@ -6,8 +6,8 @@
 //  Copyright © 2019 g950 DIT UPM. All rights reserved.
 //
 
-//import SwiftUI
-//
+import SwiftUI
+
 //struct QuizDetail: View {
 //    var quizzItem: QuizzItem
 //
