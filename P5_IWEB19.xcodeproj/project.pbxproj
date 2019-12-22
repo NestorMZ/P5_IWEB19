@@ -16,6 +16,7 @@
 		A0D2FA5023919C680035E903 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0D2FA4F23919C680035E903 /* Preview Assets.xcassets */; };
 		A0D2FA5323919C680035E903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D2FA5123919C680035E903 /* LaunchScreen.storyboard */; };
 		A0D2FA622391A1D80035E903 /* QuizDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0D2FA612391A1D80035E903 /* QuizDetail.swift */; };
+		D348AC2B23AFC10D00255C81 /* QuizzRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D348AC2A23AFC10D00255C81 /* QuizzRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		A0D2FA5223919C680035E903 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A0D2FA5423919C680035E903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A0D2FA612391A1D80035E903 /* QuizDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizDetail.swift; sourceTree = "<group>"; };
+		D348AC2A23AFC10D00255C81 /* QuizzRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				A0D2FA4623919C670035E903 /* AppDelegate.swift */,
 				A0D2FA4823919C670035E903 /* SceneDelegate.swift */,
 				A0D2FA4A23919C670035E903 /* ContentView.swift */,
+				D348AC2A23AFC10D00255C81 /* QuizzRow.swift */,
 				A0D2FA612391A1D80035E903 /* QuizDetail.swift */,
 				A0D2FA5A23919D100035E903 /* Model */,
 				A0D2FA4C23919C680035E903 /* Assets.xcassets */,
@@ -167,6 +170,7 @@
 				A055008A23A018860047552C /* imageStore.swift in Sources */,
 				A0D2FA4723919C670035E903 /* AppDelegate.swift in Sources */,
 				A0D2FA4923919C670035E903 /* SceneDelegate.swift in Sources */,
+				D348AC2B23AFC10D00255C81 /* QuizzRow.swift in Sources */,
 				A055008C23A019C00047552C /* Quizz10Model.swift in Sources */,
 				A0D2FA4B23919C670035E903 /* ContentView.swift in Sources */,
 			);

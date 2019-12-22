@@ -49,11 +49,10 @@ class Quizz10Model : ObservableObject{
                 
                 let decoder = JSONDecoder()
                 let quizzes = try decoder.decode([QuizzItem].self, from: data)
-                self.quizzes = quizzes
                 
                 DispatchQueue.main.async {
                     self.quizzes = quizzes
-                    print("Termina de descarga")
+                    print("Termina de descarga : \(quizzes.count)")
                 }
                 
             } catch {
