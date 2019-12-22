@@ -16,18 +16,22 @@ struct ContentView: View {
         NavigationView {
             List {
                 ForEach(quizzModel.quizzes){ item in
-                    QuizzRow(quizzItem: item)
-                    Text("Hello")
+                    NavigationLink(destination: QuizzDetail(quizzItem: item)) {
+                        QuizzRow(quizzItem: item)
+                    }
                 }
             }
         
     .navigationBarTitle(Text("P5 UI Quizz"))
-//        .navigationBarItems(trailing: Button(action: {
-//            self.quizzModel.download()}, label: (Image)))
+           
+        .navigationBarItems(trailing: Button(action: {
+            self.quizzModel.download()}) { Image(systemName: "arrow.clockwise") })
         }
-        
+         .background(Color.green)
     }
+    
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

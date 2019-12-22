@@ -19,25 +19,27 @@ struct QuizzRow: View {
                 .resizable()
                 .frame(width: 150, height: 150)
             .scaledToFill()
-//                .clipShape(Circle())
-//                .overlay(Circle().stroke(Color.gray, lineWidth: 2))
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.black, lineWidth: 5))
                 .shadow(radius: 10)
-//                .padding(.trailing)
+                .padding(.trailing)
 
-//            VStack {
-//                Text(quizzItem.question)
-//                    .font(.body)
-//                Text(quizzItem.author!.username)
-//                    .font(.footnote)
-//            }
-//
+            VStack {
+                Text(quizzItem.question)
+                    .font(.body)
+                Text(quizzItem.author!.username)
+                    .font(.footnote)
+            }
+
 //            VStack(alignment: .leading){
-//                HStack(alignment: .top){
-//                    Image(quizzItem.favourite??
-//                        "coraLleno" : "coraVacio")
-//                }
+//                Text("-")
+////                HStack(alignment: .top){
+////                    Image (quizzItem.favourite ?
+////                        "coraLleno" : "coraVacio")
+//                //}
 //            }
         }
+//        .background(Color.black)
     }
 }
 
