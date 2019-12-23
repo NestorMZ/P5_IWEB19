@@ -27,7 +27,7 @@ struct ContentView: View {
         .navigationBarItems(trailing: Button(action: {
             self.quizzModel.download()}) { Image(systemName: "arrow.clockwise") })
         }
-         .background(Color.green)
+        .background(Color(red: 0.20, green: 0.25, blue: 1))
     }
     
 }
