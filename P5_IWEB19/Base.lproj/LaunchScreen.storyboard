@@ -28,13 +28,13 @@
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enrique Pelaez Cornejo - Nestor Martinez" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ju-JZ-FLd">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enrique Pelaez Cornejo - Nestor Martinez" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ju-JZ-FLd">
                                 <rect key="frame" x="28.5" y="693" width="357.5" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2019 g950 DIT UPM. All rights reserved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUT-oQ-QPR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Copyright © 2019 g950 DIT UPM. All rights reserved" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NUT-oQ-QPR">
                                 <rect key="frame" x="20" y="842.5" width="380.5" height="19.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
@@ -49,7 +49,9 @@
                             <constraint firstItem="jsT-sD-3hm" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="O75-yX-sFf"/>
                             <constraint firstItem="2Ju-JZ-FLd" firstAttribute="top" secondItem="jsT-sD-3hm" secondAttribute="bottom" id="QGh-Gc-0FW"/>
                             <constraint firstItem="jsT-sD-3hm" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Wnz-BG-0rH"/>
+                            <constraint firstItem="NUT-oQ-QPR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Wty-Ko-3iM"/>
                             <constraint firstItem="NUT-oQ-QPR" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="doD-87-9tj"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NUT-oQ-QPR" secondAttribute="trailing" constant="13.5" id="i7l-SW-4Qz"/>
                             <constraint firstItem="2Ju-JZ-FLd" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="iZi-Vi-KIO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>

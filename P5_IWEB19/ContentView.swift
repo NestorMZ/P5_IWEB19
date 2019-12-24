@@ -11,7 +11,8 @@ import SwiftUI
 struct ContentView: View {
 
     @EnvironmentObject var quizzModel: Quizz10Model
-
+    private let defaults = UserDefaults.standard
+    
     var body: some View {
         NavigationView {
             List {
@@ -20,9 +21,10 @@ struct ContentView: View {
                         QuizzRow(quizzItem: item)
                     }
                 }
+                
             }
-        
-    .navigationBarTitle(Text("P5 UI Quizz"))
+
+            .navigationBarTitle(Text("P5 QuizzUI"))
            
         .navigationBarItems(trailing: Button(action: {
             self.quizzModel.download()}) { Image(systemName: "arrow.clockwise") })

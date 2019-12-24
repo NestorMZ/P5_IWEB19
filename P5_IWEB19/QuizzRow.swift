@@ -29,9 +29,10 @@ struct QuizzRow: View {
             VStack {
                 Text(quizzItem.question)
                 .font(.body)
-                .padding(.horizontal)
+                .lineLimit(3)
                 
-                Button(action: {
+                HStack {
+                    Button(action: {
                     self.quizzModel.addToFavorite(self.quizzItem)
                     if let indexRow = self.quizzModel.quizzes.firstIndex(where: {$0.id == self.quizzItem.id}) {
                         self.quizzModel.quizzes[indexRow].favourite = !(self.quizzItem.favourite)
@@ -44,31 +45,21 @@ struct QuizzRow: View {
                         .scaledToFill()}
                     .buttonStyle(PlainButtonStyle())
                 
+                Spacer()
+                VStack(alignment: .trailing){
+                    Text(quizzItem.author!.username)
+                                .font(.footnote)
+                                .foregroundColor(Color.gray)
+                    
+                    Image(uiImage: self.imageStore.image(url: self.quizzItem.author?.photo?.url))
+                        .resizable()
+                        .frame(width: 20, height: 20)
+                        .scaledToFill()
+                    .clipShape(Circle())
+                        .overlay(Circle().stroke(Color.gray,lineWidth: 1))
+                    }}
             }
-
-                               
             
-
-            VStack(alignment: .trailing){
-                Text(quizzItem.author!.username)
-                            .font(.footnote)
-                            .foregroundColor(Color.gray)
-                
-                Image(uiImage: self.imageStore.image(url: self.quizzItem.author?.photo?.url))
-                    .resizable()
-                    .frame(width: 20, height: 20)
-                    .scaledToFill()
-                .clipShape(Circle())
-                    .overlay(Circle().stroke(Color.gray,lineWidth: 1))
-            }
         }
-        
-//        .background(Color.black)
-    }
-}
-
-struct QuizzRow_Previews: PreviewProvider {
-    static var previews: some View {
-        Text("Hey")
     }
 }
