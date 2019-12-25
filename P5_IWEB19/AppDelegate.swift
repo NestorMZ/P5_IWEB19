@@ -17,8 +17,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         Thread.sleep(forTimeInterval: 1.5);
+        
         let defaults = UserDefaults.standard
-        let defaultValue = ["puntos" : 0]
+        let defaultValue = ["puntosArray" : []]
         defaults.register(defaults: defaultValue)
         
         return true

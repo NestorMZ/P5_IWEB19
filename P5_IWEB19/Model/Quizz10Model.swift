@@ -34,6 +34,18 @@ struct QuizzItem: Codable, Identifiable {
 class Quizz10Model : ObservableObject{
     
     @Published var quizzes = [QuizzItem]()
+    @Published var goodAnswers = [Int]()
+    var defaults = UserDefaults.standard
+    
+    func addToGood(id: Int){
+        if !goodAnswers.contains(id){
+            self.goodAnswers.append(id)
+        }
+    }
+    
+    func initTab(){
+        self.goodAnswers = defaults.object(forKey: "puntosArray") as! [Int]
+    }
     
     func download(){
         let surl = "https://quiz.dit.upm.es/api/quizzes/random10wa?token=5ef285733ffdf65b8049"
@@ -69,6 +81,7 @@ class Quizz10Model : ObservableObject{
             print("ERROR[1]: index error")
             return
         }
+        print("\(indexRow)")
         
         let surl = "https://quiz.dit.upm.es/api/users/tokenOwner/favourites/\(quizzItem.id)?token=5ef285733ffdf65b8049"
         

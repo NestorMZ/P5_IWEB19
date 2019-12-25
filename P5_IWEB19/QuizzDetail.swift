@@ -14,15 +14,18 @@ struct QuizzDetail: View {
     
     @EnvironmentObject var imageStore: ImageStore
     @EnvironmentObject var quizzModel: Quizz10Model
+    @EnvironmentObject var puntos: Puntos
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @State var answer: String = ""
     @State var trueAnswer = false
     
+    @Binding var score: Int
+    
     var quizzItem: QuizzItem
     
     var body: some View {
-        var puntos = defaults.integer(forKey: "puntos")
+//        var score = defaults.integer(forKey: "puntos")
         
         return GeometryReader { geometry in
             VStack {
@@ -41,29 +44,32 @@ struct QuizzDetail: View {
                         .overlay(Rectangle().stroke(Color.gray))
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
-                   
+                    
                     Button(action: {
-                            self.trueAnswer = true
+                        self.trueAnswer = true
                     }) {Text("Comprobar")}
                         .alert(isPresented: self.$trueAnswer) {
-                             if self.answer.lowercased() == self.quizzItem.answer.lowercased() {
-                                puntos = puntos+1
-                                self.defaults.set(puntos, forKey: "puntos")
-                                
+                            if self.answer.lowercased() == self.quizzItem.answer.lowercased() {
+                                self.score = self.score+1
+                                self.quizzModel.addToGood(id: self.quizzItem.id)
+                                self.defaults.set(self.quizzModel.goodAnswers, forKey: "puntosArray")
+//                                print(self.defaults.integer(forKey: "puntos"))
+//                                self.defaults.synchronize()
+                            
                                 return Alert(title: Text("Buena repuesta"), message: Text("Bravo, tiene la buena repuesta."))}
-                             else {
+                            else {
                                 return Alert(title: Text("Mala repuesta"), message: Text("Lo siento pero no es la buena repuesta. Era \(self.quizzItem.answer)."))}
                             
                     }
-                        
+                    
                 }
                 
                 Spacer()
                 HStack {
                     HStack {
                         Text(self.quizzItem.author!.username)
-                        .padding(.bottom)
-                
+                            .padding(.bottom)
+                        
                         Image(uiImage: self.imageStore.image(url: self.quizzItem.author!.photo?.url))
                             .resizable()
                             .frame(width: 40, height: 40)
@@ -73,24 +79,26 @@ struct QuizzDetail: View {
                             .padding(.bottom)
                     }
                     
-                    Text("\(puntos)")
+                    //                    Text("\(score)")
+                    //                        .padding(.horizontal)
+                    //                        .background(Color(red: 0.20, green: 0.25, blue: 1))
+                    //                        .font(.body)
+                    //                        .foregroundColor(Color.white)
                 }
             }
-        .edgesIgnoringSafeArea(.all)
-        .navigationBarItems(trailing: Button(action: {
-            self.quizzModel.addToFavorite(self.quizzItem)
-            if let indexRow = self.quizzModel.quizzes.firstIndex(where: {$0.id == self.quizzItem.id}) {
-                self.quizzModel.quizzes[indexRow].favourite = !(self.quizzItem.favourite)
-            }
-        }) {
-            Image (self.quizzItem.favourite ?
-                "coraLleno" : "coraVacio")
-                .resizable()
-                .frame(width: 30, height: 30)
-                .scaledToFill()}
-            .buttonStyle(PlainButtonStyle()))
-//            .background(Color(red: 0.20, green: 0.25, blue: 1))
-            
+            .edgesIgnoringSafeArea(.all)
+            .navigationBarItems(trailing: Button(action: {
+                self.quizzModel.addToFavorite(self.quizzItem)
+                if let indexRow = self.quizzModel.quizzes.firstIndex(where: {$0.id == self.quizzItem.id}) {
+                    self.quizzModel.quizzes[indexRow].favourite = !(self.quizzItem.favourite)
+                }
+            }) {
+                Image (self.quizzItem.favourite ?
+                    "coraLleno" : "coraVacio")
+                    .resizable()
+                    .frame(width: 30, height: 30)
+                    .scaledToFill()}
+                .buttonStyle(PlainButtonStyle()))            
         }
     }
 }
