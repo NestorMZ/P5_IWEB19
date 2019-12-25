@@ -56,7 +56,7 @@ struct QuizzRow: View {
                             .frame(width: 20, height: 20)
                             .scaledToFill()
                             .clipShape(Circle())
-                            .overlay(Circle().stroke(Color.gray,lineWidth: 1))
+                            .overlay(Circle().stroke(Color(red: 0.20, green: 0.25, blue: 1), lineWidth: 2))
                     }}
             }
             

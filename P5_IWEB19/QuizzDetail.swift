@@ -2,7 +2,7 @@
 //  QuizzDetail.swift
 //  P5_IWEB19
 //
-//  Created by Alberto Martinez on 22/12/19.
+//  Created by Nestor Martinez on 22/12/19.
 //  Copyright © 2019 g950 DIT UPM. All rights reserved.
 //
 
@@ -14,20 +14,16 @@ struct QuizzDetail: View {
     
     @EnvironmentObject var imageStore: ImageStore
     @EnvironmentObject var quizzModel: Quizz10Model
-    @EnvironmentObject var puntos: Puntos
+    
     @Environment(\.horizontalSizeClass) var horizontalSizeClass
     
     @State var answer: String = ""
     @State var trueAnswer = false
     
-    @Binding var score: Int
-    
     var quizzItem: QuizzItem
     
     var body: some View {
-//        var score = defaults.integer(forKey: "puntos")
-        
-        return GeometryReader { geometry in
+        GeometryReader { geometry in
             VStack {
                 VStack {
                     Image(uiImage: self.imageStore.image(url: self.quizzItem.attachment?.url))
@@ -50,12 +46,9 @@ struct QuizzDetail: View {
                     }) {Text("Comprobar")}
                         .alert(isPresented: self.$trueAnswer) {
                             if self.answer.lowercased() == self.quizzItem.answer.lowercased() {
-                                self.score = self.score+1
                                 self.quizzModel.addToGood(id: self.quizzItem.id)
                                 self.defaults.set(self.quizzModel.goodAnswers, forKey: "puntosArray")
-//                                print(self.defaults.integer(forKey: "puntos"))
-//                                self.defaults.synchronize()
-                            
+                                
                                 return Alert(title: Text("Buena repuesta"), message: Text("Bravo, tiene la buena repuesta."))}
                             else {
                                 return Alert(title: Text("Mala repuesta"), message: Text("Lo siento pero no es la buena repuesta. Era \(self.quizzItem.answer)."))}
@@ -78,12 +71,6 @@ struct QuizzDetail: View {
                             .overlay(Circle().stroke(Color(red: 0.20, green: 0.25, blue: 1), lineWidth: 3))
                             .padding(.bottom)
                     }
-                    
-                    //                    Text("\(score)")
-                    //                        .padding(.horizontal)
-                    //                        .background(Color(red: 0.20, green: 0.25, blue: 1))
-                    //                        .font(.body)
-                    //                        .foregroundColor(Color.white)
                 }
             }
             .edgesIgnoringSafeArea(.all)

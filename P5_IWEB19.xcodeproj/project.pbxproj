@@ -17,7 +17,6 @@
 		A0D2FA5323919C680035E903 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0D2FA5123919C680035E903 /* LaunchScreen.storyboard */; };
 		D320CD4D23AFDF0D00D324E5 /* QuizzDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = D320CD4C23AFDF0D00D324E5 /* QuizzDetail.swift */; };
 		D348AC2B23AFC10D00255C81 /* QuizzRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D348AC2A23AFC10D00255C81 /* QuizzRow.swift */; };
-		D3F7F9D723B2588000616762 /* Puntos.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3F7F9D623B2588000616762 /* Puntos.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +32,6 @@
 		A0D2FA5423919C680035E903 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D320CD4C23AFDF0D00D324E5 /* QuizzDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzDetail.swift; sourceTree = "<group>"; };
 		D348AC2A23AFC10D00255C81 /* QuizzRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzRow.swift; sourceTree = "<group>"; };
-		D3F7F9D623B2588000616762 /* Puntos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Puntos.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,7 +90,6 @@
 			isa = PBXGroup;
 			children = (
 				A055008923A018860047552C /* imageStore.swift */,
-				D3F7F9D623B2588000616762 /* Puntos.swift */,
 				A055008B23A019C00047552C /* Quizz10Model.swift */,
 			);
 			path = Model;
@@ -169,7 +166,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3F7F9D723B2588000616762 /* Puntos.swift in Sources */,
 				A055008A23A018860047552C /* imageStore.swift in Sources */,
 				D320CD4D23AFDF0D00D324E5 /* QuizzDetail.swift in Sources */,
 				A0D2FA4723919C670035E903 /* AppDelegate.swift in Sources */,

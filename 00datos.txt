@@ -1,0 +1,11 @@
+PRACTICA P5 - SwiftUI - IWEB 2019-2020
+
+Enrique Pelaez Cornejo
+Nestor Martinez
+
+Grupo : g950
+
+Ademas se han incluido las siguientes mejoras:
+	- Mejora 1: Punctuacion Persistente
+	- Mejora 2: Actualizar Favoritos
+

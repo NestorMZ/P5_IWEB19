@@ -11,34 +11,22 @@ import SwiftUI
 struct ContentView: View {
     
     @EnvironmentObject var quizzModel: Quizz10Model
-    //    @EnvironmentObject var puntos: Puntos
     private let defaults = UserDefaults.standard
     
-    @State var puntos: Int = 0
-    
     var body: some View {
-        let bindingModel = Binding(
-            get: { self.defaults.integer(forKey: "puntos") },
-            set: { self.defaults.set($0, forKey: "puntos")
-                self.puntos = $0 })
-        
-        return ZStack {
+        ZStack {
             NavigationView {
                 List {
                     ForEach(quizzModel.quizzes){ item in
-                        NavigationLink(destination: QuizzDetail(score: bindingModel, quizzItem: item)) {
+                        NavigationLink(destination: QuizzDetail(quizzItem: item)) {
                             QuizzRow(quizzItem: item)
                         }
                     }
-                    
                 }
-                    
                 .navigationBarTitle(Text("P5 QuizzUI"))
-                    
                 .navigationBarItems(trailing: Button(action: {
                     self.quizzModel.download()}) { Image(systemName: "arrow.clockwise") })
             }
-            .background(Color(red: 0.20, green: 0.25, blue: 1))
             VStack(alignment: .trailing){
                 Spacer()
                 HStack{
